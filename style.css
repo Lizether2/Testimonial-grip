@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100..900&display=swap');
+
+:root{
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+
+    /*### Neutral*/
+    --White: hsl(0, 0%, 100%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--Grey-200);
+    font-family: "barlow semi condensed", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    align-content: center;
+    height: 90vh;  /*tamano de alto*/
+}
+section{
+   max-width: 1200px;
+    margin: 0 auto;
+   /*width: 80%; /*tamano de la seccion
+    margin: 0 auto;/* centrar*/
+    background-color: var(--Grey-200);
+/* crear grilla*/
+   display: grid; /* para hacer un grid de varias columnas*/
+   grid-template-columns: repeat(4, auto); /*nro de columna, y tamano de la columna*/
+   grid-template-rows: repeat(2, auto); /*nro de columna, y tamano de la columna*/;
+    gap: 1em;
+}
+.autor{
+    display: flex;
+    
+}
+.name-autor h3,h2{
+   
+    font-weight: 500;
+    color: var(--White);
+    font-size: 16px;
+   
+}
+.name-autor{
+    padding: 0 10px 10px 10px;
+}
+.title h2{
+    padding: 10px;
+}
+/* card ****/
+.etiqueta1{
+    background-color: beige;
+    color: var(--Grey-200);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow:0 0 100px var(--Grey-400) ;
+   
+}
+/*** descripcion *****/
+.name-autor p{
+    color: var(--Grey-200);
+    font-size: 15px;
+}
+.autor img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    aspect-ratio: 1;/* Se ajusta al mismo valor que el width */
+    object-fit: cover;
+
+    
+}
+/* Elegir el numero de etiqueta para hacer cambios*/
+.etiqueta1:nth-child(1){
+    background-color: var(--Purple-500);
+    grid-column:  2 span; /* ocupa o se expande 2 columnas*/
+    background-image: url(./images/bg-pattern-quotation.svg);/* imagen de fondo*/
+    background-repeat: no-repeat; /*la imagen no se repite*/
+    /*background-position: ; posicion top-left*/
+    background-position-x: 80%;/*right position x*/
+    
+    /*nesting*/
+   /*h2{
+        color: var(--Grey-100)
+    }*/
+}
+.etiqueta1:nth-child(2){
+    background-color: var(--Grey-500);
+}
+.etiqueta1:nth-child(3){
+    background-color: var(--Grey-100);
+    
+   h3, h2{
+        color:var(--Dark-blue);
+    }
+    p{
+        color: var(--Grey-400);
+    }
+   
+}
+.etiqueta1:nth-child(4){
+    background-color: var(--Dark-blue);
+    grid-column: 2 span;/* cuando es un unico valor, dica su posicion*/
+     
+}
+.etiqueta1:nth-child(5){
+    background-color: var(--White);
+    grid-row: 1 / 2 span;/* cuando poes 2 valores, va desde fila 1 a la fila 2*/
+    grid-column: 4; /* cuando es un unico valor, dica su posicion*/
+    h3, h2{
+        color:var(--Dark-blue);
+    }
+    p{
+        color: var(--Grey-400);
+    }
+}
+
